@@ -40,7 +40,7 @@ class CategoryViewSet(viewsets.ModelViewSet):
 
 def notify_users(category_id, message):
     user = get_user_model()
-    users = user.objects.all().filter(subscribed__in=category_id)
+    users = user.objects.filter(subscribed__id=category_id)
     factory = NotifierFactory()
 
     for user in users:
