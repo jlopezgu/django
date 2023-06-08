@@ -131,3 +131,6 @@ REST_FRAMEWORK = {
 }
 
 AUTH_USER_MODEL = 'subscriber.User'
+
+import django_on_heroku
+django_on_heroku.settings(locals())
