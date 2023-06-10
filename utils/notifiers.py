@@ -1,19 +1,20 @@
+import logging
 from subscriber.models import User
 
 
 class EmailNotifier:
     def notify(self, user: User):
-        print(f'Email Notification for user {user.first_name} {user.last_name}')
+        logging.debug(f'Email Notification for user {user.first_name} {user.last_name}')
 
 
 class SMSNotifier:
     def notify(self, user: User):
-        print(f'SMS Notification for user {user.first_name} {user.last_name}')
+        logging.debug(f'SMS Notification for user {user.first_name} {user.last_name}')
 
 
 class PushNotifier:
     def notify(self, user: User):
-        print(f'Push Notification for user {user.first_name} {user.last_name}')
+        logging.debug(f'Push Notification for user {user.first_name} {user.last_name}')
 
 
 class NotifierFactory:

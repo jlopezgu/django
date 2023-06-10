@@ -1,6 +1,5 @@
 from rest_framework import viewsets
 from utils.notifiers import NotifierFactory
-
 from subscriber.serializers import UserSerializer, ChannelSerializer, CategorySerializer, NotificationSerializer, \
     MessageSerializer
 from django.contrib.auth import get_user_model
