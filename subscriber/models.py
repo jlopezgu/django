@@ -1,3 +1,4 @@
+from category.models import Category
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
@@ -13,13 +14,6 @@ class BaseModel(models.Model):
 
 
 class Channel(BaseModel):
-    name = models.CharField(max_length=50, blank=False)
-
-    def __str__(self):
-        return self.name
-
-
-class Category(BaseModel):
     name = models.CharField(max_length=50, blank=False)
 
     def __str__(self):

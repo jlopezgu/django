@@ -1,9 +1,9 @@
 from rest_framework import viewsets
 from utils.notifiers import NotifierFactory
-from subscriber.serializers import UserSerializer, ChannelSerializer, CategorySerializer, NotificationSerializer, \
+from subscriber.serializers import UserSerializer, ChannelSerializer, NotificationSerializer, \
     MessageSerializer
 from django.contrib.auth import get_user_model
-from .models import Channel, Category, Notification, Message
+from .models import Channel, Notification, Message
 from rest_framework.response import Response
 
 
@@ -30,11 +30,6 @@ class UserViewSet(viewsets.ModelViewSet):
 class ChannelViewSet(viewsets.ModelViewSet):
     queryset = Channel.objects.all().order_by('-created')
     serializer_class = ChannelSerializer
-
-
-class CategoryViewSet(viewsets.ModelViewSet):
-    queryset = Category.objects.all().order_by('-created')
-    serializer_class = CategorySerializer
 
 
 def notify_users(category_id, message):
